@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class SimpleCharacterControl : MonoBehaviour {
 
@@ -75,8 +76,8 @@ public class SimpleCharacterControl : MonoBehaviour {
     {
         m_animator.SetBool("Grounded", m_isGrounded);
 
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
+        float v = CrossPlatformInputManager.GetAxis("Vertical");
+        float h = CrossPlatformInputManager.GetAxis("Horizontal");
 
         Transform camera = Camera.main.transform;
 
