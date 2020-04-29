@@ -1,0 +1,8 @@
+{
+	"waypoints":
+	[
+		["milk", "cheese", "apples", "bread", "potato"],
+		["cream", "milk", "banana"],
+		["meat", "cheese", "spaghetti", "tomato paste"]
+	]
+}
