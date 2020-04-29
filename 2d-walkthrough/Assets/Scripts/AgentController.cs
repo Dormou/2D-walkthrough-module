@@ -6,62 +6,37 @@ using System.Linq;
 
 public class AgentController : MonoBehaviour
 {
+    public TextAsset waypointDescription;
+
     private GameObject[] waypoints;
     private GameObject[] enters;
     private GameObject[] exits;
 
-    // Start is called before the first frame update
     void Start()
     {
-        if (waypoints == null)
+        WayDescription way = JsonUtility.FromJson<WayDescription>(waypointDescription.text);
+        
+        waypoints = GameObject.FindGameObjectsWithTag("Waypoint")
+                    .ToList()
+                    .Where(go => way.waypoints.Contains(go.GetComponent<WaypointController>().label))
+                    .ToArray();
+        foreach (var point in waypoints)
         {
-            waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+            Debug.Log("point " + point.GetComponent<WaypointController>().label);
         }
-        if (enters == null)
-        {
-            enters = GameObject.FindGameObjectsWithTag("Enter");
-        }
-        if (exits == null)
-        {
-            exits = GameObject.FindGameObjectsWithTag("Exit");
-        }
+        enters = GameObject.FindGameObjectsWithTag("Enter");
+        exits = GameObject.FindGameObjectsWithTag("Exit");
 
         var ajacencyList = GetAdjacencyList(waypoints, enters, exits);
         var optimalPath = GetOptimalPathByWaypoints(waypoints, ajacencyList);
-        Debug.Log(optimalPath);
-        Debug.Log(optimalPath.Count);
     }
 
-    static bool GetPath(NavMeshPath path, Vector3 fromPosition, Vector3 toPosition, int mask)
+    void Update()
     {
-        path.ClearCorners();
 
-        NavMesh.CalculatePath(fromPosition, toPosition, mask, path);
-
-        if(path.status != NavMeshPathStatus.PathComplete)
-        {
-            return false;
-        }
-
-        return true;
     }
 
-    static float GetPathLength(NavMeshPath path)
-    {
-        float length = 0.0f;
-
-        if(path.status != NavMeshPathStatus.PathInvalid && path.corners.Length > 1)
-        {
-            for(int i = 1; i < path.corners.Length; i++)
-            {
-                length += Vector3.Distance(path.corners[i-1], path.corners[i]);
-            }
-        }
-
-        return length;
-    }
-
-    static Dictionary<GameObject, Dictionary<GameObject, float>> GetAdjacencyList(GameObject[] waypoints, GameObject[] enters, GameObject[] exits)
+    private static Dictionary<GameObject, Dictionary<GameObject, float>> GetAdjacencyList(GameObject[] waypoints, GameObject[] enters, GameObject[] exits)
     {
         var path = new NavMeshPath();
         var result = new Dictionary<GameObject, Dictionary<GameObject, float>>();
@@ -120,7 +95,7 @@ public class AgentController : MonoBehaviour
         return result;
     }
 
-    static List<GameObject> GetOptimalPathByWaypoints(GameObject[] waypoints, Dictionary<GameObject, Dictionary<GameObject, float>> ajacencyList)
+    private static List<GameObject> GetOptimalPathByWaypoints(GameObject[] waypoints, Dictionary<GameObject, Dictionary<GameObject, float>> ajacencyList)
     {
         var resultPath = new List<GameObject>();
         var currentPath = new List<GameObject>();
@@ -164,5 +139,34 @@ public class AgentController : MonoBehaviour
         }
         Debug.Log(resultPathLength);
         return resultPath;
+    }
+
+    private static bool GetPath(NavMeshPath path, Vector3 fromPosition, Vector3 toPosition, int mask)
+    {
+        path.ClearCorners();
+
+        NavMesh.CalculatePath(fromPosition, toPosition, mask, path);
+
+        if(path.status != NavMeshPathStatus.PathComplete)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private static float GetPathLength(NavMeshPath path)
+    {
+        float length = 0.0f;
+
+        if(path.status != NavMeshPathStatus.PathInvalid && path.corners.Length > 1)
+        {
+            for(int i = 1; i < path.corners.Length; i++)
+            {
+                length += Vector3.Distance(path.corners[i-1], path.corners[i]);
+            }
+        }
+
+        return length;
     }
 }

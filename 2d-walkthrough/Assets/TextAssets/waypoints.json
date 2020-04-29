@@ -1,8 +1,4 @@
 {
-	"waypoints":
-	[
-		["milk", "cheese", "apples", "bread", "potato"],
-		["cream", "milk", "banana"],
-		["meat", "cheese", "spaghetti", "tomato paste"]
-	]
+	"spaceLabel": "simpleShop",
+	"waypoints": ["milk", "cheese", "apple", "bread", "potato"]
 }
