@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
 
-public class AgentController : MonoBehaviour
+public class PathFinder : MonoBehaviour
 {
     public TextAsset waypointDescription;
+    
+    [HideInInspector]
+    public List<GameObject> optimalPath;
 
     private GameObject[] waypoints;
     private GameObject[] enters;
@@ -20,23 +23,19 @@ public class AgentController : MonoBehaviour
                     .ToList()
                     .Where(go => way.waypoints.Contains(go.GetComponent<WaypointController>().label))
                     .ToArray();
-        foreach (var point in waypoints)
-        {
-            Debug.Log("point " + point.GetComponent<WaypointController>().label);
-        }
         enters = GameObject.FindGameObjectsWithTag("Enter");
         exits = GameObject.FindGameObjectsWithTag("Exit");
 
         var ajacencyList = GetAdjacencyList(waypoints, enters, exits);
-        var optimalPath = GetOptimalPathByWaypoints(waypoints, ajacencyList);
+        optimalPath = GetOptimalPathByWaypoints(waypoints, ajacencyList);
     }
 
-    void Update()
+    public Vector3 GetStart()
     {
-
+        return optimalPath.First().transform.position;
     }
 
-    private static Dictionary<GameObject, Dictionary<GameObject, float>> GetAdjacencyList(GameObject[] waypoints, GameObject[] enters, GameObject[] exits)
+    private Dictionary<GameObject, Dictionary<GameObject, float>> GetAdjacencyList(GameObject[] waypoints, GameObject[] enters, GameObject[] exits)
     {
         var path = new NavMeshPath();
         var result = new Dictionary<GameObject, Dictionary<GameObject, float>>();
@@ -54,7 +53,7 @@ public class AgentController : MonoBehaviour
             minPath = float.PositiveInfinity;
             for (int j = 0; j < enters.Length; j++)
             {
-                if(GetPath(path, enters[j].transform.position, waypoints[i].transform.position, NavMesh.AllAreas))
+                if(GetPath(path, enters[j], waypoints[i]))
                 {
                     currentPathLength = GetPathLength(path);
                     if(currentPathLength < minPath)
@@ -69,7 +68,7 @@ public class AgentController : MonoBehaviour
             minPath = float.PositiveInfinity;
             for (int j = 0; j < exits.Length; j++)
             {
-                if(GetPath(path, waypoints[i].transform.position, exits[j].transform.position, NavMesh.AllAreas))
+                if(GetPath(path, waypoints[i], exits[j]))
                 {
                     currentPathLength = GetPathLength(path);
                     if(currentPathLength < minPath)
@@ -83,7 +82,7 @@ public class AgentController : MonoBehaviour
 
             for (int j = i + 1; j < waypoints.Length; j++)
             {
-                if(GetPath(path, waypoints[i].transform.position, waypoints[j].transform.position, NavMesh.AllAreas))
+                if(GetPath(path, waypoints[i], waypoints[j]))
                 {
                     currentPathLength = GetPathLength(path);
                     result[waypoints[i]].Add(waypoints[j], currentPathLength);
@@ -91,11 +90,10 @@ public class AgentController : MonoBehaviour
                 }
             }
         }
-
         return result;
     }
 
-    private static List<GameObject> GetOptimalPathByWaypoints(GameObject[] waypoints, Dictionary<GameObject, Dictionary<GameObject, float>> ajacencyList)
+    private List<GameObject> GetOptimalPathByWaypoints(GameObject[] waypoints, Dictionary<GameObject, Dictionary<GameObject, float>> ajacencyList)
     {
         var resultPath = new List<GameObject>();
         var currentPath = new List<GameObject>();
@@ -137,15 +135,15 @@ public class AgentController : MonoBehaviour
                 resultPath = currentPath;
             }
         }
-        Debug.Log(resultPathLength);
+
         return resultPath;
     }
 
-    private static bool GetPath(NavMeshPath path, Vector3 fromPosition, Vector3 toPosition, int mask)
+    public bool GetPath(NavMeshPath path, GameObject fromObject, GameObject toObject)
     {
         path.ClearCorners();
 
-        NavMesh.CalculatePath(fromPosition, toPosition, mask, path);
+        NavMesh.CalculatePath(fromObject.transform.position, toObject.transform.position, NavMesh.AllAreas, path);
 
         if(path.status != NavMeshPathStatus.PathComplete)
         {
@@ -155,7 +153,7 @@ public class AgentController : MonoBehaviour
         return true;
     }
 
-    private static float GetPathLength(NavMeshPath path)
+    public float GetPathLength(NavMeshPath path)
     {
         float length = 0.0f;
 

@@ -18,6 +18,23 @@ public class SimpleCharacterControl : MonoBehaviour {
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
 
+    private PathFinder pathfinder;
+
+    void Start()
+    {
+        pathfinder = GameObject.Find("Agent").GetComponent<PathFinder>();
+        
+        try
+        {
+            transform.position = pathfinder.GetStart();
+        }
+        catch (System.Exception ex)
+        {
+            Debug.Log("Error while move player to Start: " + ex.Message);
+        }
+        
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         ContactPoint[] contactPoints = collision.contacts;
