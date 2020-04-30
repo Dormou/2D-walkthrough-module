@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SimpleMap.unity
+    path: Assets/Scenes/SimpleMap_nav.unity
     guid: c9da0e75c1fabbd4fb420ef883a9f80c
   m_configObjects: {}
