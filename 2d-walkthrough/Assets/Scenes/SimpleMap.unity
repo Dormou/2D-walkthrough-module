@@ -356,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
@@ -378,6 +378,31 @@ PrefabInstance:
       propertyPath: label
       value: banana
       objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2026320895}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1928987926}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4726b70cc11cd24bbd1905fa8256403, type: 3}
 --- !u!1 &85098519
@@ -703,7 +728,7 @@ PrefabInstance:
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
@@ -722,8 +747,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
       propertyPath: label
       value: milk
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2026320895}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 525122939}
+    - target: {fileID: 7970260790275206019, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249082156894737690, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4726b70cc11cd24bbd1905fa8256403, type: 3}
@@ -1075,6 +1145,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &394618120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534558270865088109, guid: e4726b70cc11cd24bbd1905fa8256403,
+    type: 3}
+  m_PrefabInstance: {fileID: 1233877607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &484191275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1242,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484191275}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &525122939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534558270865088109, guid: e4726b70cc11cd24bbd1905fa8256403,
+    type: 3}
+  m_PrefabInstance: {fileID: 201737234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &580452551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1430,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630183135}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &631141682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534558270865088109, guid: e4726b70cc11cd24bbd1905fa8256403,
+    type: 3}
+  m_PrefabInstance: {fileID: 794903286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &662966721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
@@ -1381,8 +1469,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761979098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 50}
-  m_LocalScale: {x: 102, y: 6, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 50}
+  m_LocalScale: {x: 102, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 2139262355}
   m_RootOrder: 0
@@ -1495,7 +1583,7 @@ PrefabInstance:
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
@@ -1517,6 +1605,31 @@ PrefabInstance:
       propertyPath: label
       value: apple
       objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2026320895}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 631141682}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4726b70cc11cd24bbd1905fa8256403, type: 3}
 --- !u!1001 &921181164
@@ -1569,7 +1682,7 @@ PrefabInstance:
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
@@ -1591,8 +1704,39 @@ PrefabInstance:
       propertyPath: label
       value: bread
       objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2026320895}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 931517626}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4726b70cc11cd24bbd1905fa8256403, type: 3}
+--- !u!1 &931517626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534558270865088109, guid: e4726b70cc11cd24bbd1905fa8256403,
+    type: 3}
+  m_PrefabInstance: {fileID: 921181164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &954241279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,8 +1764,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954241279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.5, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 6, z: 100}
+  m_LocalPosition: {x: -50.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 100}
   m_Children: []
   m_Father: {fileID: 2139262355}
   m_RootOrder: 3
@@ -1684,6 +1828,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954241279}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &958158469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534558270865088109, guid: e4726b70cc11cd24bbd1905fa8256403,
+    type: 3}
+  m_PrefabInstance: {fileID: 1442732410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &977240478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1758,6 +1908,11 @@ PrefabInstance:
     - target: {fileID: 4274868087642060, guid: 16e7451e81164bc4caac73768f16ceb6, type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114882824916184338, guid: 16e7451e81164bc4caac73768f16ceb6,
+        type: 3}
+      propertyPath: m_moveSpeed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e7451e81164bc4caac73768f16ceb6, type: 3}
@@ -2273,7 +2428,7 @@ PrefabInstance:
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
@@ -2295,6 +2450,31 @@ PrefabInstance:
       propertyPath: label
       value: potato
       objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2026320895}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 394618120}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4726b70cc11cd24bbd1905fa8256403, type: 3}
 --- !u!4 &1319302213 stripped
@@ -2302,6 +2482,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
     type: 3}
   m_PrefabInstance: {fileID: 1933502074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1326341989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534558270865088109, guid: e4726b70cc11cd24bbd1905fa8256403,
+    type: 3}
+  m_PrefabInstance: {fileID: 1893787794}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1401699881
 GameObject:
@@ -2444,7 +2630,7 @@ PrefabInstance:
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
@@ -2463,9 +2649,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
       propertyPath: label
       value: spaghetti
       objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2026320895}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 958158469}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4726b70cc11cd24bbd1905fa8256403, type: 3}
 --- !u!1 &1462568496
@@ -2748,8 +2969,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632530879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.5, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 6, z: 100}
+  m_LocalPosition: {x: 50.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 100}
   m_Children: []
   m_Father: {fileID: 2139262355}
   m_RootOrder: 2
@@ -2930,8 +3151,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774009102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -50}
-  m_LocalScale: {x: 102, y: 6, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -50}
+  m_LocalScale: {x: 102, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 2139262355}
   m_RootOrder: 1
@@ -3104,7 +3325,7 @@ PrefabInstance:
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
@@ -3126,8 +3347,39 @@ PrefabInstance:
       propertyPath: label
       value: cheese
       objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2026320895}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1326341989}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4726b70cc11cd24bbd1905fa8256403, type: 3}
+--- !u!1 &1928987926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534558270865088109, guid: e4726b70cc11cd24bbd1905fa8256403,
+    type: 3}
+  m_PrefabInstance: {fileID: 78094631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1933502074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3178,7 +3430,7 @@ PrefabInstance:
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
         type: 3}
@@ -3199,6 +3451,36 @@ PrefabInstance:
         type: 3}
       propertyPath: label
       value: cream
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2026320895}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782983101500087068, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2094156212}
+    - target: {fileID: 7970260790275206019, guid: e4726b70cc11cd24bbd1905fa8256403,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4726b70cc11cd24bbd1905fa8256403, type: 3}
@@ -3288,6 +3570,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5534558270865088108, guid: e4726b70cc11cd24bbd1905fa8256403,
     type: 3}
   m_PrefabInstance: {fileID: 1893787794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2094156212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534558270865088109, guid: e4726b70cc11cd24bbd1905fa8256403,
+    type: 3}
+  m_PrefabInstance: {fileID: 1933502074}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2139262354
 GameObject:

@@ -6,32 +6,33 @@ using UnityEngine.AI;
 public class PathVisualizer : MonoBehaviour
 {
     private int currentPointIndex;
+    private GameObject partEndPoint;
     private PathFinder pathfinder;
 
     void Start()
     {
         currentPointIndex = 0;
         pathfinder = GetComponent<PathFinder>();
-        if(!DrawNextPathPart(currentPointIndex))
+
+        if(!DrawNextPathPart())
         {
             Debug.Log("Error while visualize first path part");
         };
     }
 
-    private bool DrawNextPathPart(int currentPointIndex)
+    private bool DrawNextPathPart()
     {
-        var path = new NavMeshPath();
-        var line = GetComponent<LineRenderer>();
-
         if (currentPointIndex >= pathfinder.optimalPath.Count - 1)
         {
             return false;
         }
 
+        var path = new NavMeshPath();
+        var line = GetComponent<LineRenderer>();
         var currentPoint = pathfinder.optimalPath[currentPointIndex];
-        var nextPoint = pathfinder.optimalPath[currentPointIndex + 1];
+        partEndPoint = pathfinder.optimalPath[currentPointIndex + 1];
 
-        if(pathfinder.GetPath(path, currentPoint, nextPoint))
+        if(pathfinder.GetPath(path, currentPoint, partEndPoint))
         {
             currentPointIndex++;
             if(line == null)
@@ -51,5 +52,16 @@ public class PathVisualizer : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void OnWaypointArrivalEvent(GameObject waypoint)
+    {
+        if(waypoint == partEndPoint)
+        {
+            if(!DrawNextPathPart())
+            {
+                Debug.Log("Path ended");
+            }
+        }
     }
 }
