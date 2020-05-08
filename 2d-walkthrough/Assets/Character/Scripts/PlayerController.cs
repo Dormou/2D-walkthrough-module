@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour {
 
     private float m_currentV = 0;
     private float m_currentH = 0;
+    private float m_pathLength = 0;
 
     private readonly float m_interpolation = 10;
 
     private bool m_wasGrounded;
     private Vector3 m_currentDirection = Vector3.zero;
+    private Vector3 m_currentPosition;
 
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
@@ -27,13 +29,12 @@ public class PlayerController : MonoBehaviour {
         
         try
         {
-            transform.position = pathfinder.GetStart();
+            m_currentPosition = transform.position = pathfinder.GetStart(); 
         }
         catch (System.Exception ex)
         {
             Debug.Log("Error while move player to Start: " + ex.Message);
         }
-        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -115,6 +116,10 @@ public class PlayerController : MonoBehaviour {
             transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
 
             m_animator.SetFloat("MoveSpeed", direction.magnitude);
+
+            m_pathLength += (transform.position - m_currentPosition).magnitude;
+            m_currentPosition = transform.position;
+            Debug.Log("path: " + m_pathLength);
         }
 
         if (!m_wasGrounded && m_isGrounded)
