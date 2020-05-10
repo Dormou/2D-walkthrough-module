@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     private GameObject selectMenu;
     private GameObject mainMenu;
 
-    public void Start()
+    void Start()
     {
         selectMenu = GameObject.Find("SelectMenu");
         mainMenu = GameObject.Find("MainMenu");

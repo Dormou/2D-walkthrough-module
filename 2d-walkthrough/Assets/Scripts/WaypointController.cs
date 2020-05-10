@@ -5,13 +5,13 @@ using UnityEngine.Events;
 
 public class WaypointController : MonoBehaviour
 {
-    // Строковый идентификатор объекта
     public string label;
+
     public WaypointArrivalEvent WaypointArrivalEvent;
 
     void Start()
     {
-
+        // Создать маркер??
     }
 
     void OnTriggerEnter(Collider other)

@@ -4,13 +4,14 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
+    
+
     [SerializeField] private float m_moveSpeed = 8;
     [SerializeField] private Animator m_animator;
     [SerializeField] private Rigidbody m_rigidBody;
 
     private float m_currentV = 0;
     private float m_currentH = 0;
-    private float m_pathLength = 0;
 
     private readonly float m_interpolation = 10;
 
@@ -117,9 +118,8 @@ public class PlayerController : MonoBehaviour {
 
             m_animator.SetFloat("MoveSpeed", direction.magnitude);
 
-            m_pathLength += (transform.position - m_currentPosition).magnitude;
+            WayDescription.CurrentPathPartLength += (transform.position - m_currentPosition).magnitude;
             m_currentPosition = transform.position;
-            Debug.Log("path: " + m_pathLength);
         }
 
         if (!m_wasGrounded && m_isGrounded)

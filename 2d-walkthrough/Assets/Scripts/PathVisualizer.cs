@@ -2,17 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using TMPro;
 
 public class PathVisualizer : MonoBehaviour
 {
     private int currentPointIndex;
     private GameObject partEndPoint;
     private PathFinder pathfinder;
+    private GameObject player;
+    private GameObject movementButtons;
+    private GameObject informationPanel;
 
     void Start()
     {
+        movementButtons = GameObject.Find("MovementButtons");
+        informationPanel = GameObject.Find("InformationPanel");
+        informationPanel.SetActive(false);
+
         currentPointIndex = 0;
+        WayDescription.PathLength = 0;
+        WayDescription.CurrentPathPartLength = 0;
         pathfinder = GetComponent<PathFinder>();
+       
+        // ????
+        player = GameObject.Find("Player");
 
         if(!DrawNextPathPart())
         {
@@ -34,6 +48,9 @@ public class PathVisualizer : MonoBehaviour
 
         if(pathfinder.GetPath(path, currentPoint, partEndPoint))
         {
+            WayDescription.CurrentOptimalPathPartLength = pathfinder.GetPathLength(path);
+            WayDescription.PathLength += WayDescription.CurrentPathPartLength;
+            WayDescription.CurrentPathPartLength = 0;
             currentPointIndex++;
             if(line == null)
             {
@@ -49,6 +66,8 @@ public class PathVisualizer : MonoBehaviour
             line.positionCount = path.corners.Length;
             line.SetPositions(path.corners);
 
+            // Поворот персонажа по направлению линии!!!
+
             return true;
         }
         return false;
@@ -58,10 +77,42 @@ public class PathVisualizer : MonoBehaviour
     {
         if(waypoint == partEndPoint)
         {
+            movementButtons.SetActive(false);
+            informationPanel.SetActive(true);
+            SetPartResultInformation();
+            
             if(!DrawNextPathPart())
             {
                 Debug.Log("Path ended");
             }
         }
+    }
+
+    private void SetPartResultInformation()
+    {
+        GameObject.Find("OptimalPathValue").GetComponent<TextMeshProUGUI>()?.SetText(string.Format("{0:N2}", WayDescription.CurrentOptimalPathPartLength));
+        GameObject.Find("ResultPathValue").GetComponent<TextMeshProUGUI>()?.SetText(string.Format("{0:N2}", WayDescription.CurrentPathPartLength));
+        var relation = WayDescription.CurrentPathPartLength / WayDescription.CurrentOptimalPathPartLength;
+        var ratingManager = GameObject.Find("Rating").GetComponent<RatingManager>();
+        Debug.Log(relation);
+        Debug.Log(ratingManager);
+
+        if(relation <= 1.3)
+        {
+            ratingManager.SetRating(3);
+        }
+        else if(relation <= 1.6)
+        {
+            ratingManager.SetRating(2);
+        }
+        else if(relation <= 2)
+        {
+            ratingManager.SetRating(1);
+        }
+        else
+        {
+            ratingManager.SetRating(0);
+        }
+
     }
 }

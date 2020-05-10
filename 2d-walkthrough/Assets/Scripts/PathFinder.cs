@@ -17,9 +17,6 @@ public class PathFinder : MonoBehaviour
 
     void Start()
     {
-        //WayDescription way = JsonUtility.FromJson<WayDescription>(waypointDescription.text);
-        
-
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint")
                     .ToList()
                     .Where(go => WayDescription.Waypoints.Contains(go.GetComponent<WaypointController>().label))
@@ -101,12 +98,8 @@ public class PathFinder : MonoBehaviour
         var resultPathLength = float.PositiveInfinity;
         float currentPathLength;
 
-        var debug_counter = 1;
-
         foreach (var waypoint in waypoints)
         {
-            Debug.Log("Pathfinding iteration #" + debug_counter);
-
             currentPath.Clear();
             currentPathLength = 0.0f;
 
@@ -134,14 +127,6 @@ public class PathFinder : MonoBehaviour
             currentPath.Add(pair.Key);
             currentPathLength += pair.Value;
 
-            foreach (var point in currentPath)
-            {
-                Debug.Log("point " + point.transform.position + " " + point.GetComponent<WaypointController>()?.label);
-            }
-            Debug.Log("current length " + currentPathLength);
-            Debug.Log("result length " + resultPathLength);
-            debug_counter++;
-
             if(currentPathLength < resultPathLength)
             {
                 resultPathLength = currentPathLength;
@@ -149,6 +134,7 @@ public class PathFinder : MonoBehaviour
             }
         }
 
+        WayDescription.OptimalPathLength = resultPathLength;
         return resultPath;
     }
 
