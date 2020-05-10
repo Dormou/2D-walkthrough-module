@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PathVisualizer : MonoBehaviour
 {
@@ -23,6 +25,8 @@ public class PathVisualizer : MonoBehaviour
         currentPointIndex = 0;
         WayDescription.PathLength = 0;
         WayDescription.CurrentPathPartLength = 0;
+        WayDescription.IsPathCompleted = false;
+        WayDescription.BeginningTime = DateTime.Now;
         pathfinder = GetComponent<PathFinder>();
        
         // ????
@@ -88,14 +92,22 @@ public class PathVisualizer : MonoBehaviour
         }
     }
 
+    public void OnExitArrivalEvent(GameObject exit)
+    {
+        if(exit == partEndPoint)
+        {
+            WayDescription.IsPathCompleted = true;
+            WayDescription.EndingTime = DateTime.Now;
+            SceneManager.LoadScene("Result");
+        }
+    }
+
     private void SetPartResultInformation()
     {
         GameObject.Find("OptimalPathValue").GetComponent<TextMeshProUGUI>()?.SetText(string.Format("{0:N2}", WayDescription.CurrentOptimalPathPartLength));
         GameObject.Find("ResultPathValue").GetComponent<TextMeshProUGUI>()?.SetText(string.Format("{0:N2}", WayDescription.CurrentPathPartLength));
         var relation = WayDescription.CurrentPathPartLength / WayDescription.CurrentOptimalPathPartLength;
         var ratingManager = GameObject.Find("Rating").GetComponent<RatingManager>();
-        Debug.Log(relation);
-        Debug.Log(ratingManager);
 
         if(relation <= 1.3)
         {

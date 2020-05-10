@@ -32,9 +32,8 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
-    public void QuitGame()
+    public void QuitModule()
     {
-        Debug.Log("Quit");
         Application.Quit();
     }
 
