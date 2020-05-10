@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class WayDescription
+public static class WayDescription
 {
-    public string spaceLabel;
-    public List<string> waypoints;
+    public static string SpaceLabel { get; set; }
+    public static HashSet<string> Waypoints { get; set; }
+
 }
+

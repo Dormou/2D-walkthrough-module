@@ -17,11 +17,12 @@ public class PathFinder : MonoBehaviour
 
     void Start()
     {
-        WayDescription way = JsonUtility.FromJson<WayDescription>(waypointDescription.text);
+        //WayDescription way = JsonUtility.FromJson<WayDescription>(waypointDescription.text);
         
+
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint")
                     .ToList()
-                    .Where(go => way.waypoints.Contains(go.GetComponent<WaypointController>().label))
+                    .Where(go => WayDescription.Waypoints.Contains(go.GetComponent<WaypointController>().label))
                     .ToArray();
         enters = GameObject.FindGameObjectsWithTag("Enter");
         exits = GameObject.FindGameObjectsWithTag("Exit");
