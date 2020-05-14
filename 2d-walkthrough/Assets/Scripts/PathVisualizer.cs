@@ -29,7 +29,6 @@ public class PathVisualizer : MonoBehaviour
         WayDescription.BeginningTime = DateTime.Now;
         pathfinder = GetComponent<PathFinder>();
        
-        // ????
         player = GameObject.Find("Player");
 
         if(!DrawNextPathPart())
@@ -40,15 +39,15 @@ public class PathVisualizer : MonoBehaviour
 
     private bool DrawNextPathPart()
     {
-        if (currentPointIndex >= pathfinder.optimalPath.Count - 1)
+        if (currentPointIndex >= WayDescription.Path.Count - 1)
         {
             return false;
         }
 
         var path = new NavMeshPath();
         var line = GetComponent<LineRenderer>();
-        var currentPoint = pathfinder.optimalPath[currentPointIndex];
-        partEndPoint = pathfinder.optimalPath[currentPointIndex + 1];
+        var currentPoint = WayDescription.Path[currentPointIndex];
+        partEndPoint = WayDescription.Path[currentPointIndex + 1];
 
         if(pathfinder.GetPath(path, currentPoint, partEndPoint))
         {
@@ -70,7 +69,10 @@ public class PathVisualizer : MonoBehaviour
             line.positionCount = path.corners.Length;
             line.SetPositions(path.corners);
 
-            // Поворот персонажа по направлению линии!!!
+            Debug.Log(currentPoint.tag);
+            Debug.Log(partEndPoint.tag);
+            currentPoint.SetActive(false);
+            partEndPoint.SetActive(true);
 
             return true;
         }
@@ -98,6 +100,7 @@ public class PathVisualizer : MonoBehaviour
         {
             WayDescription.IsPathCompleted = true;
             WayDescription.EndingTime = DateTime.Now;
+            WayDescription.SaveResult();
             SceneManager.LoadScene("Result");
         }
     }

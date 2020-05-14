@@ -5,15 +5,15 @@ using UnityEngine.Events;
 
 public class WaypointController : MonoBehaviour
 {
-    public string label;
+    public string Label;
 
     public WaypointArrivalEvent WaypointArrivalEvent;
 
     void Start()
     {
-        // Создать маркер??
+        gameObject.SetActive(false);
     }
-
+    
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")

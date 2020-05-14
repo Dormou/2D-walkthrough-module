@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 249082156894737690}
   - component: {fileID: 7970260790275206019}
   - component: {fileID: 8268370842259768967}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Exit
   m_TagString: Exit
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f16584e183381409bfd8f94666621c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Label: 
   ExitArrivalEvent:
     m_PersistentCalls:
       m_Calls:

@@ -44,6 +44,10 @@ public class RatingManager : MonoBehaviour
                 SetRating(0);
             }
         }
+        else
+        {
+            SetRating(0);
+        }
     }
 
     public void SetRating(int rating)

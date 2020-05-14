@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
+using System.Linq;
 
-public class PlayerController : MonoBehaviour {
-
-    
-
+public class PlayerController : MonoBehaviour
+{
     [SerializeField] private float m_moveSpeed = 8;
     [SerializeField] private Animator m_animator;
     [SerializeField] private Rigidbody m_rigidBody;
@@ -22,15 +21,11 @@ public class PlayerController : MonoBehaviour {
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
 
-    private PathFinder pathfinder;
-
     void Start()
-    {
-        pathfinder = GameObject.Find("Agent").GetComponent<PathFinder>();
-        
+    {        
         try
         {
-            m_currentPosition = transform.position = pathfinder.GetStart(); 
+            m_currentPosition = transform.position = WayDescription.Path.First().transform.position; 
         }
         catch (System.Exception ex)
         {

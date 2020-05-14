@@ -6,10 +6,6 @@ using System.Linq;
 
 public class PathFinder : MonoBehaviour
 {
-    public TextAsset waypointDescription;
-    
-    [HideInInspector]
-    public List<GameObject> optimalPath;
 
     private GameObject[] waypoints;
     private GameObject[] enters;
@@ -19,18 +15,13 @@ public class PathFinder : MonoBehaviour
     {
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint")
                     .ToList()
-                    .Where(go => WayDescription.Waypoints.Contains(go.GetComponent<WaypointController>().label))
+                    .Where(go => WayDescription.Waypoints.Contains(go.GetComponent<WaypointController>().Label))
                     .ToArray();
         enters = GameObject.FindGameObjectsWithTag("Enter");
         exits = GameObject.FindGameObjectsWithTag("Exit");
 
         var ajacencyList = GetAdjacencyList(waypoints, enters, exits);
-        optimalPath = GetOptimalPathByWaypoints(waypoints, ajacencyList);
-    }
-
-    public Vector3 GetStart()
-    {
-        return optimalPath.First().transform.position;
+        CreateOptimalPathByWaypoints(waypoints, ajacencyList);
     }
 
     private Dictionary<GameObject, Dictionary<GameObject, float>> GetAdjacencyList(GameObject[] waypoints, GameObject[] enters, GameObject[] exits)
@@ -91,7 +82,7 @@ public class PathFinder : MonoBehaviour
         return result;
     }
 
-    private List<GameObject> GetOptimalPathByWaypoints(GameObject[] waypoints, Dictionary<GameObject, Dictionary<GameObject, float>> ajacencyList)
+    private void CreateOptimalPathByWaypoints(GameObject[] waypoints, Dictionary<GameObject, Dictionary<GameObject, float>> ajacencyList)
     {
         var resultPath = new List<GameObject>();
         var currentPath = new List<GameObject>();
@@ -135,7 +126,8 @@ public class PathFinder : MonoBehaviour
         }
 
         WayDescription.OptimalPathLength = resultPathLength;
-        return resultPath;
+        WayDescription.Path = new List<GameObject>(resultPath);
+        WayDescription.PathDescription = WayDescription.Path.Where(go => go.tag == "Waypoint").Select(go => go.GetComponent<WaypointController>().Label).ToList();
     }
 
     public bool GetPath(NavMeshPath path, GameObject fromObject, GameObject toObject)

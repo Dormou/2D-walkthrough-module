@@ -1,0 +1,19 @@
+{
+    "SpaceLabel": "ShopB",
+    "BeginningTime": "13.05.2020 2:39:45",
+    "EndingTime": "13.05.2020 2:40:05",
+    "Path": [
+        "Apple",
+        "Cucumber",
+        "Banana",
+        "Carrot",
+        "Bread",
+        "Cereals",
+        "Butter",
+        "Cheese",
+        "Cream"
+    ],
+    "PathLength": 20.39999008178711,
+    "OptimalPathLength": 86.55064392089844,
+    "IsPathCompleted": false
+}

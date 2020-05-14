@@ -5,11 +5,13 @@ using UnityEngine.Events;
 
 public class ExitController : MonoBehaviour
 {
+    public string Label;
+
     public ExitArrivalEvent ExitArrivalEvent;
 
     void Start()
     {
-        // Создать маркер??
+        gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)

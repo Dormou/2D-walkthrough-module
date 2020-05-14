@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1990013418070520400}
   - component: {fileID: 249082156894737690}
   - component: {fileID: 7970260790275206019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LabelWaypoint
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1cfd11ceb21204d852963adceb0772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: 
+  Label: 
   WaypointArrivalEvent:
     m_PersistentCalls:
       m_Calls:

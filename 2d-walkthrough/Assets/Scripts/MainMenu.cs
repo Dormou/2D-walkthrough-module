@@ -49,7 +49,6 @@ public class MainMenu : MonoBehaviour
                 if(item.isOn)
                 {
                     var text = item.gameObject.GetComponentsInChildren<TextMeshProUGUI>()?.First().text;
-                    Debug.Log(text);
                     WayDescription.Waypoints.Add(text);
                 }
             }
