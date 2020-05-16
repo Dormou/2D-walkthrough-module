@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1990013418070520400}
   - component: {fileID: 249082156894737690}
   - component: {fileID: 7970260790275206019}
-  - component: {fileID: 8268370842259768967}
+  - component: {fileID: 1209237794652074665}
   m_Layer: 10
   m_Name: Exit
   m_TagString: Exit
@@ -93,7 +93,7 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8268370842259768967
+--- !u!114 &1209237794652074665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,23 +102,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5534558270865088109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f16584e183381409bfd8f94666621c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f1cfd11ceb21204d852963adceb0772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
-  ExitArrivalEvent:
+  WaypointArrivalEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: ExitArrivalEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      m_Calls: []
+    m_TypeName: WaypointArrivalEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null

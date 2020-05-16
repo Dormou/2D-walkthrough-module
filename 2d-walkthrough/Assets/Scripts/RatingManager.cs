@@ -7,53 +7,48 @@ using TMPro;
 
 public class RatingManager : MonoBehaviour
 {
-    [SerializeField] private Sprite fullStar;
-    [SerializeField] private Sprite emptyStar;
-    private Image firstStar;
-    private Image secondStar;
-    private Image thirdStar;
+    [SerializeField] private GameObject rating;
+    [SerializeField] private Sprite thumbUp;
+    [SerializeField] private Sprite thumbDown;
+    private Image image;
+    private GameObject imageList;
 
     void Start()
     {
-        firstStar = GameObject.Find("FirstStar").GetComponent<Image>();
-        secondStar = GameObject.Find("SecondStar").GetComponent<Image>();
-        thirdStar = GameObject.Find("ThirdStar").GetComponent<Image>();
-
-        if(WayDescription.IsPathCompleted)
+        image = gameObject.GetComponent<Image>();
+        imageList = GameObject.Find("ItemsList");
+        
+        if(imageList != null)
         {
-            GameObject.Find("ResultPathValue").GetComponent<TextMeshProUGUI>()?.SetText(string.Format("{0:N2}", WayDescription.PathLength));
-            var time = WayDescription.EndingTime - WayDescription.BeginningTime;
-            GameObject.Find("ResultTimeValue").GetComponent<TextMeshProUGUI>()?.SetText("{0} min {1} sec", time.Minutes, time.Seconds);
-
-            var relation = WayDescription.PathLength / WayDescription.OptimalPathLength;
-
-            if(relation <= 1.3)
+            foreach (var item in WayDescription.PathDescription)
             {
-                SetRating(3);
+                var ratingItem = Instantiate(rating, imageList.transform);
+                var relation = item.PathPartLength / item.OptimalPathPartLength;
+                if(relation <= 1.5)
+                {
+                    ratingItem.GetComponent<Image>().sprite = thumbUp;
+                }
+                else
+                {
+                    ratingItem.GetComponent<Image>().sprite = thumbDown;
+                }
             }
-            else if(relation <= 1.6)
-            {
-                SetRating(2);
-            }
-            else if(relation <= 2)
-            {
-                SetRating(1);
-            }
-            else
-            {
-                SetRating(0);
-            }
-        }
-        else
-        {
-            SetRating(0);
         }
     }
 
-    public void SetRating(int rating)
+    public void SetRating()
     {
-        firstStar.sprite = rating < 1 ? emptyStar : fullStar;
-        secondStar.sprite = rating < 2 ? emptyStar : fullStar;
-        thirdStar.sprite = rating < 3 ? emptyStar : fullStar;
+        if(image != null)
+        {
+            var relation = WayDescription.CurrentPathPartLength / WayDescription.CurrentOptimalPathPartLength;
+            if(relation <= 1.5)
+            {
+                image.sprite = thumbUp;
+            }
+            else
+            {
+                image.sprite = thumbDown;
+            }
+        }
     }
 }

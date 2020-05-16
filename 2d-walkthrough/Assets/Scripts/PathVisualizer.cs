@@ -15,11 +15,13 @@ public class PathVisualizer : MonoBehaviour
     private GameObject player;
     private GameObject movementButtons;
     private GameObject informationPanel;
+    private RatingManager ratingManager;
 
     void Start()
     {
         movementButtons = GameObject.Find("MovementButtons");
         informationPanel = GameObject.Find("InformationPanel");
+        ratingManager = GameObject.Find("Rating").GetComponent<RatingManager>();
         informationPanel.SetActive(false);
 
         currentPointIndex = 0;
@@ -49,11 +51,15 @@ public class PathVisualizer : MonoBehaviour
         var currentPoint = WayDescription.Path[currentPointIndex];
         partEndPoint = WayDescription.Path[currentPointIndex + 1];
 
+
+        WayDescription.PathLength += WayDescription.CurrentPathPartLength;
+        WayDescription.CurrentPathPartLength = 0;
+
         if(pathfinder.GetPath(path, currentPoint, partEndPoint))
         {
+            WayDescription.PathPartBeginningTime = DateTime.Now;
             WayDescription.CurrentOptimalPathPartLength = pathfinder.GetPathLength(path);
-            WayDescription.PathLength += WayDescription.CurrentPathPartLength;
-            WayDescription.CurrentPathPartLength = 0;
+            
             currentPointIndex++;
             if(line == null)
             {
@@ -83,51 +89,25 @@ public class PathVisualizer : MonoBehaviour
     {
         if(waypoint == partEndPoint)
         {
+            WayDescription.AddPartDescription(waypoint.GetComponent<WaypointController>().Label);
             movementButtons.SetActive(false);
             informationPanel.SetActive(true);
-            SetPartResultInformation();
+            ratingManager.SetRating();  
             
             if(!DrawNextPathPart())
             {
-                Debug.Log("Path ended");
+                if (waypoint.tag == "Exit")
+                {
+                    WayDescription.IsPathCompleted = true;
+                    WayDescription.EndingTime = DateTime.Now;
+                    WayDescription.SaveResult();
+                    SceneManager.LoadScene("Result");
+                }
+                else
+                {
+                    Debug.Log("Error while path visualizing");
+                }           
             }
         }
-    }
-
-    public void OnExitArrivalEvent(GameObject exit)
-    {
-        if(exit == partEndPoint)
-        {
-            WayDescription.IsPathCompleted = true;
-            WayDescription.EndingTime = DateTime.Now;
-            WayDescription.SaveResult();
-            SceneManager.LoadScene("Result");
-        }
-    }
-
-    private void SetPartResultInformation()
-    {
-        GameObject.Find("OptimalPathValue").GetComponent<TextMeshProUGUI>()?.SetText(string.Format("{0:N2}", WayDescription.CurrentOptimalPathPartLength));
-        GameObject.Find("ResultPathValue").GetComponent<TextMeshProUGUI>()?.SetText(string.Format("{0:N2}", WayDescription.CurrentPathPartLength));
-        var relation = WayDescription.CurrentPathPartLength / WayDescription.CurrentOptimalPathPartLength;
-        var ratingManager = GameObject.Find("Rating").GetComponent<RatingManager>();
-
-        if(relation <= 1.3)
-        {
-            ratingManager.SetRating(3);
-        }
-        else if(relation <= 1.6)
-        {
-            ratingManager.SetRating(2);
-        }
-        else if(relation <= 2)
-        {
-            ratingManager.SetRating(1);
-        }
-        else
-        {
-            ratingManager.SetRating(0);
-        }
-
     }
 }

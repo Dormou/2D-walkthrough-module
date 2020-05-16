@@ -18,7 +18,7 @@ public static class WayDescription
     public static List<GameObject> Path { get; set; }
 
     // Построенный маршрут
-    public static List<string> PathDescription { get; set; }
+    public static List<WalkPartModellingResult> PathDescription { get; set; }
 
     // Длина текущего участка пути
     public static float CurrentPathPartLength { get; set; }
@@ -41,6 +41,9 @@ public static class WayDescription
     // Время окончания прохождения
     public static DateTime EndingTime { get; set; }
 
+    // Время начала прохождения текущего участка
+    public static DateTime PathPartBeginningTime { get; set; }
+
     public static void SaveResult()
     {
         var resultDescription = new WalkModellingResult();
@@ -57,6 +60,11 @@ public static class WayDescription
             Debug.Log("Error while save result: " + ex);
         }
         
+    }
+
+    public static void AddPartDescription(string currentWaypoint)
+    {
+        PathDescription.Add(new WalkPartModellingResult(currentWaypoint));
     }
 }
 

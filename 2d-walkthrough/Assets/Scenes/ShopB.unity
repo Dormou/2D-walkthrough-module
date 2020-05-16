@@ -2896,6 +2896,46 @@ PrefabInstance:
       propertyPath: ExitArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 789341542}
+    - target: {fileID: 1209237794652074665, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209237794652074665, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8,
+        type: 3}
+      propertyPath: Label
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209237794652074665, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209237794652074665, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209237794652074665, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 863642920}
+    - target: {fileID: 1209237794652074665, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWaypointArrivalEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209237794652074665, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209237794652074665, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8,
+        type: 3}
+      propertyPath: WaypointArrivalEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 789341542}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 690fbb8e70a3d3e42b4218a2cdc8b8a8, type: 3}
 --- !u!4 &789341541 stripped
@@ -6909,7 +6949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1840359878
 MonoBehaviour:
   m_ObjectHideFlags: 0

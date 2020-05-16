@@ -1,0 +1,46 @@
+{
+    "SpaceLabel": "ShopB",
+    "BeginningTime": "15.05.2020 18:47:56",
+    "EndingTime": "15.05.2020 18:48:29",
+    "Path": [
+        {
+            "EndPoint": "Cucumber",
+            "Time": "0m 2s 226ms",
+            "PathPartLength": 7.55806303024292,
+            "OptimalPathPartLength": 7.55806303024292
+        },
+        {
+            "EndPoint": "Carrot",
+            "Time": "0m 6s 453ms",
+            "PathPartLength": 22.95110321044922,
+            "OptimalPathPartLength": 10.880000114440918
+        },
+        {
+            "EndPoint": "Cereals",
+            "Time": "0m 6s 818ms",
+            "PathPartLength": 22.758941650390626,
+            "OptimalPathPartLength": 16.866239547729493
+        },
+        {
+            "EndPoint": "Cheese",
+            "Time": "0m 4s 853ms",
+            "PathPartLength": 17.10244369506836,
+            "OptimalPathPartLength": 13.421821594238282
+        },
+        {
+            "EndPoint": "Cream",
+            "Time": "0m 4s 2ms",
+            "PathPartLength": 6.8852057456970219,
+            "OptimalPathPartLength": 4.189998626708984
+        },
+        {
+            "EndPoint": "Exit",
+            "Time": "0m 8s 244ms",
+            "PathPartLength": 34.02869415283203,
+            "OptimalPathPartLength": 31.1292724609375
+        }
+    ],
+    "PathLength": 76.12127685546875,
+    "OptimalPathLength": 70.09693908691406,
+    "IsPathCompleted": true
+}

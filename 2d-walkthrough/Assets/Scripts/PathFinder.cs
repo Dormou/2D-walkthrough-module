@@ -127,7 +127,7 @@ public class PathFinder : MonoBehaviour
 
         WayDescription.OptimalPathLength = resultPathLength;
         WayDescription.Path = new List<GameObject>(resultPath);
-        WayDescription.PathDescription = WayDescription.Path.Where(go => go.tag == "Waypoint").Select(go => go.GetComponent<WaypointController>().Label).ToList();
+        WayDescription.PathDescription = new List<WalkPartModellingResult>();
     }
 
     public bool GetPath(NavMeshPath path, GameObject fromObject, GameObject toObject)
