@@ -91,8 +91,11 @@ public class PathVisualizer : MonoBehaviour
         {
             WayDescription.AddPartDescription(waypoint.GetComponent<WaypointController>().Label);
             movementButtons.SetActive(false);
-            informationPanel.SetActive(true);
-            ratingManager.SetRating();  
+            if(waypoint.tag != "Exit")
+            {
+                informationPanel.SetActive(true);
+                ratingManager.SetRating();
+            }
             
             if(!DrawNextPathPart())
             {
