@@ -1,0 +1,16 @@
+{
+    "SpaceLabel": "ShopA",
+    "BeginningTime": "17.06.2020 20:06:14",
+    "EndingTime": "17.06.2020 20:06:35",
+    "Path": [
+        {
+            "EndPoint": "Fish",
+            "Time": "0m 14s 728ms",
+            "PathPartLength": 93.00367736816406,
+            "OptimalPathPartLength": 72.68223571777344
+        }
+    ],
+    "PathLength": 93.34574890136719,
+    "OptimalPathLength": 198.5845489501953,
+    "IsPathCompleted": false
+}

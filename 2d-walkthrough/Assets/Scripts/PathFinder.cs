@@ -24,6 +24,7 @@ public class PathFinder : MonoBehaviour
         CreateOptimalPathByWaypoints(waypoints, ajacencyList);
     }
 
+    // Представление графа в виде списка смежности
     private Dictionary<GameObject, Dictionary<GameObject, float>> GetAdjacencyList(GameObject[] waypoints, GameObject[] enters, GameObject[] exits)
     {
         var path = new NavMeshPath();
@@ -82,6 +83,7 @@ public class PathFinder : MonoBehaviour
         return result;
     }
 
+    // Поиск оптимального пути
     private void CreateOptimalPathByWaypoints(GameObject[] waypoints, Dictionary<GameObject, Dictionary<GameObject, float>> ajacencyList)
     {
         var resultPath = new List<GameObject>();
@@ -130,6 +132,7 @@ public class PathFinder : MonoBehaviour
         WayDescription.PathDescription = new List<WalkPartModellingResult>();
     }
 
+    // Поиск пути между двумя точками
     public bool GetPath(NavMeshPath path, GameObject fromObject, GameObject toObject)
     {
         path.ClearCorners();
@@ -144,6 +147,7 @@ public class PathFinder : MonoBehaviour
         return true;
     }
 
+    // Расчет длины пути
     public float GetPathLength(NavMeshPath path)
     {
         float length = 0.0f;

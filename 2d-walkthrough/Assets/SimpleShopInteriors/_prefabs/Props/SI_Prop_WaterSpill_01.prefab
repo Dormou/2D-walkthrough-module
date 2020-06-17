@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 479192}
   - component: {fileID: 3301282}
   - component: {fileID: 2317038}
+  - component: {fileID: 2470566320552302376}
   m_Layer: 0
   m_Name: SI_Prop_WaterSpill_01
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2470566320552302376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.13309, y: 0.033507552, z: 2.1876128}
+  m_Center: {x: 0, y: 0.016753776, z: 0}

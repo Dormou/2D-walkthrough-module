@@ -1,0 +1,46 @@
+{
+    "SpaceLabel": "ShopA",
+    "BeginningTime": "17.06.2020 20:10:10",
+    "EndingTime": "17.06.2020 20:11:02",
+    "Path": [
+        {
+            "EndPoint": "Juice",
+            "Time": "0m 3s 689ms",
+            "PathPartLength": 16.155048370361329,
+            "OptimalPathPartLength": 16.155048370361329
+        },
+        {
+            "EndPoint": "Apple",
+            "Time": "0m 6s 944ms",
+            "PathPartLength": 28.92900276184082,
+            "OptimalPathPartLength": 22.126676559448243
+        },
+        {
+            "EndPoint": "Bread",
+            "Time": "0m 19s 557ms",
+            "PathPartLength": 108.02592468261719,
+            "OptimalPathPartLength": 51.28681182861328
+        },
+        {
+            "EndPoint": "Pet feed",
+            "Time": "0m 6s 27ms",
+            "PathPartLength": 28.9986515045166,
+            "OptimalPathPartLength": 17.149534225463868
+        },
+        {
+            "EndPoint": "Cereals",
+            "Time": "0m 10s 441ms",
+            "PathPartLength": 54.37091827392578,
+            "OptimalPathPartLength": 44.46345520019531
+        },
+        {
+            "EndPoint": "Exit 1",
+            "Time": "0m 5s 869ms",
+            "PathPartLength": 32.8449592590332,
+            "OptimalPathPartLength": 32.8449592590332
+        }
+    ],
+    "PathLength": 235.80972290039063,
+    "OptimalPathLength": 204.17393493652345,
+    "IsPathCompleted": true
+}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 472092}
   - component: {fileID: 3362858}
   - component: {fileID: 2348720}
+  - component: {fileID: 1660142270247976898}
   m_Layer: 0
   m_Name: SI_Prop_MopBin_01
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1660142270247976898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6132523, y: 2.6127322, z: 1.091465}
+  m_Center: {x: 0, y: 1.3063661, z: 0}

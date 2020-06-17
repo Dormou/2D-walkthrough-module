@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         if (m_collisions.Count == 0) { m_isGrounded = false; }
     }
 
+    // Перемещение и анимация движения
 	void Update ()
     {
         m_animator.SetBool("Grounded", m_isGrounded);

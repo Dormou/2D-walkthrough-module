@@ -39,6 +39,7 @@ public class PathVisualizer : MonoBehaviour
         };
     }
 
+    // Визуализация участка маршрута
     private bool DrawNextPathPart()
     {
         if (currentPointIndex >= WayDescription.Path.Count - 1)
@@ -75,8 +76,6 @@ public class PathVisualizer : MonoBehaviour
             line.positionCount = path.corners.Length;
             line.SetPositions(path.corners);
 
-            Debug.Log(currentPoint.tag);
-            Debug.Log(partEndPoint.tag);
             currentPoint.SetActive(false);
             partEndPoint.SetActive(true);
 
@@ -85,6 +84,7 @@ public class PathVisualizer : MonoBehaviour
         return false;
     }
 
+    // Достижение конца текущего участка маршрута
     public void OnWaypointArrivalEvent(GameObject waypoint)
     {
         if(waypoint == partEndPoint)
